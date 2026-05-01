@@ -60,3 +60,11 @@ Thumbs.db
 *.zip
 *.tar.gz
 worlds-biggest-software-project.zip
+
+# Not usefully public
+phil-only/
+
+# Projects — only track the research and feature survey files
+projects/*/*
+!projects/*/research.md
+!projects/*/features.md
