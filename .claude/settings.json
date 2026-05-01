@@ -1,7 +1,25 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git -C /opt/Development/Projects/worlds-biggest-software-project status --short)"
+      "Bash(git -C /opt/Development/Projects/worlds-biggest-software-project status --short)",
+      "Edit(/.claude/skills/research-project/**)",
+      "Edit(/.claude/skills/project-functionality-research/**)",
+      "WebFetch(domain:www.cloudzero.com)",
+      "WebFetch(domain:harness.io)",
+      "WebFetch(domain:www.vantage.sh)",
+      "WebFetch(domain:www.finout.io)",
+      "WebFetch(domain:cast.ai)",
+      "WebFetch(domain:www.infracost.io)",
+      "WebFetch(domain:www.opencost.io)",
+      "WebFetch(domain:kubecost.com)",
+      "WebFetch(domain:cloudcustodian.io)",
+      "WebFetch(domain:www.nops.io)",
+      "WebFetch(domain:www.apptio.com)",
+      "WebFetch(domain:docs.infracost.io)",
+      "WebFetch(domain:github.com)"
+    ],
+    "additionalDirectories": [
+      "/opt/Development/Projects/worlds-biggest-software-project/.claude/skills"
     ]
   }
 }
