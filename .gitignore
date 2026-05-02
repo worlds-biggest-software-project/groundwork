@@ -65,6 +65,4 @@ worlds-biggest-software-project.zip
 phil-only/
 
 # Projects — only track the research and feature survey files
-projects/*/*
-!projects/*/research.md
-!projects/*/features.md
+projects/
