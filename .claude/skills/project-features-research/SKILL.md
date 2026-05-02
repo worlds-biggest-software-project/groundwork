@@ -1,5 +1,5 @@
 ---
-name: "project-functionality-research"
+name: "project-features-research"
 description: "Research existing industry solutions for a project, documenting their notable features and functionality to inform what the project should build."
 argument-hint: "Project name, candidate number from candidates.md, or free-text description"
 compatibility: "Requires internet access for web research; works best with a WBSP candidates.md and existing research.md available"
@@ -22,7 +22,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 Your goal is to produce a structured features document that surveys existing industry
 solutions — commercial products, open source tools, and notable prototypes — for a
 given software project idea, and distils the most useful, well-validated features and
-functionality from those solutions. Save the output to the `projects/` directory as
+functionality from those solutions. Save the output to the `projects/[projectName]/` directory as
 `features.md`, beside the corresponding `research.md`.
 
 It is essential that you DO NOT PROCEED until you have fully understood the project
