@@ -1,12 +1,12 @@
 ---
 name: "project-background-research"
-description: "Collect useful background information for a software development project, covering existing solutions, market size, industry standards, and relevant research literature."
+description: "Research a software project deeply: discover existing solutions and competitors, identify industry standards and protocols, compile research literature, and assess market size and demand. Use this whenever the user mentions researching a candidate project, evaluating the problem space, or understanding what already exists in a domain."
 argument-hint: "Project name, candidate number from candidates.md, or free-text description"
 compatibility: "Requires internet access for web research; works best with a WBSP candidates.md available"
 metadata:
   author: "worlds-biggest-software-project"
 user-invocable: true
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 ## User Input

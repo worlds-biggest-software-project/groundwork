@@ -1,12 +1,12 @@
 ---
 name: "project-github-description"
-description: "Syncs a candidate project's description from candidate-projects.md to its GitHub repository, updating the repo description if it differs."
+description: "Keep GitHub repo descriptions in sync with candidate-projects.md. Automatically updates the repository description if it diverges from the canonical source. Use this to maintain consistency as project definitions evolve."
 argument-hint: "Project directory name (e.g. 12-feature-flag-management-system) or candidate number"
 compatibility: "Requires gh CLI authenticated; GitHub repo must exist at worlds-biggest-software-project/<project-slug>"
 metadata:
   author: "worlds-biggest-software-project"
 user-invocable: true
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 ## User Input

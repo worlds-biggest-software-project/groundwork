@@ -1,12 +1,12 @@
 ---
 name: "project-features-research"
-description: "Research existing industry solutions for a project, documenting their notable features and functionality to inform what the project should build."
+description: "Survey competing products to build a feature specification. Document what features existing tools offer, what differentiates winners, and where gaps exist. Use this when preparing to build a project, designing what features to prioritize, or benchmarking against incumbents."
 argument-hint: "Project name, candidate number from candidates.md, or free-text description"
 compatibility: "Requires internet access for web research; works best with a WBSP candidates.md and existing research.md available"
 metadata:
   author: "worlds-biggest-software-project"
 user-invocable: true
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 ## User Input

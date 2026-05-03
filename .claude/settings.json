@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(*)",
       "Bash(git -C /opt/Development/Projects/worlds-biggest-software-project status --short)",
       "Edit(/.claude/skills/research-project/**)",
       "Edit(/.claude/skills/project-functionality-research/**)",

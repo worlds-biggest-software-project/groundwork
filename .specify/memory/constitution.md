@@ -1,22 +1,20 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: (template) → 1.0.0
-Modified principles: N/A — initial constitution, all sections are new
-Added sections:
-  - Core Principles (I–V)
-  - Technology & Quality Standards
-  - Development Workflow
-  - Governance
-Removed sections: N/A
+Version change: 1.0.0 → 1.0.1
+Modified principles:
+  - III. Specification-First: added explicit scope exclusion for projects/ subdirectories
+Modified sections:
+  - Development Workflow: added explicit scope exclusion for projects/ subdirectories
+Added sections: None
+Removed sections: None
 Templates reviewed:
-  ✅ .specify/templates/plan-template.md — "Constitution Check" section uses
-     "[Gates determined based on constitution file]"; compatible with principles as defined
-  ✅ .specify/templates/spec-template.md — no principle-specific references; compatible
-  ✅ .specify/templates/tasks-template.md — no principle-specific references; compatible
-  ✅ .specify/templates/checklist-template.md — fully generic; no updates required
-  ✅ .specify/templates/agent-file-template.md — fully generic; no updates required
-Follow-up TODOs: None — all placeholders resolved
+  ✅ .specify/templates/plan-template.md — unaffected; Constitution Check gate is generic
+  ✅ .specify/templates/spec-template.md — unaffected; no principle-specific references
+  ✅ .specify/templates/tasks-template.md — unaffected; no principle-specific references
+  ✅ .specify/templates/checklist-template.md — unaffected; fully generic
+  ✅ .specify/templates/agent-file-template.md — unaffected; fully generic
+Follow-up TODOs: None
 -->
 
 # World's Biggest Software Project Constitution
@@ -49,6 +47,12 @@ is mandatory for all features:
 Specification documents are living artifacts; they MUST be updated when implementation
 reveals scope changes. Skipping or abbreviating steps requires explicit written
 justification in the plan's Complexity Tracking table.
+
+**Scope exclusion**: The `projects/` directory contains candidate project artefacts
+(research notes, feature surveys, READMEs for software that *could* be built). Files
+under `projects/[subproject]/` are NOT implementation work. Changes to those files MUST
+NOT trigger a `speckit-specify` recommendation; the Speckit workflow does not apply to
+them.
 
 ### IV. Incremental, Independently Testable Delivery
 
@@ -85,6 +89,10 @@ meaningful messages that explain intent, not mechanics. Pull requests MUST refer
 the corresponding specification document. Git history is the canonical record of
 project intent and supersedes inline comments as a source of rationale.
 
+**Exclusion**: Changes confined to `projects/[subproject]/` paths are catalogue
+maintenance, not feature development. The Speckit workflow (including `speckit-specify`)
+MUST NOT be recommended or required for such changes.
+
 ## Governance
 
 This constitution supersedes all other documented development practices. Amendments
@@ -102,4 +110,4 @@ All implementation plans MUST include a Constitution Check gate before Phase 0 r
 Principle violations MUST be documented in the plan's Complexity Tracking table with
 explicit justification; undocumented violations are grounds for blocking a pull request.
 
-**Version**: 1.0.0 | **Ratified**: 2026-04-22 | **Last Amended**: 2026-04-22
+**Version**: 1.0.1 | **Ratified**: 2026-04-22 | **Last Amended**: 2026-05-02

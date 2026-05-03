@@ -1,12 +1,12 @@
 ---
 name: "project-create-README"
-description: "Write a GitHub-quality README.md introduction for a candidate project, drawing on its research.md and features.md files."
+description: "Generate a compelling GitHub README that positions a project and attracts contributors. Synthesizes research.md and features.md into a clear value proposition, feature overview, and market context. Use this once your project research is complete to create polished public documentation."
 argument-hint: "Project directory name (e.g. 12-feature-flag-management-system) or candidate number"
 compatibility: "Requires projects/<name>/research.md and projects/<name>/features.md to exist"
 metadata:
   author: "worlds-biggest-software-project"
 user-invocable: true
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 ## User Input
