@@ -52,9 +52,24 @@ Run multiple prompts from the queue sequentially. Each prompt executes in a dedi
       - Do **not** spawn more than one subagent at a time. The loop is strictly serial: one subagent runs, finishes, then the next starts.
       - Do **not** interpret, optimise, or batch the prompt — pass it verbatim to the subagent.
 
-   d. **Handle the subagent result**:
-      - **Success**: Update file status to `complete`, move to `prompt-queue/complete/`
-      - **Error / exception**: Update file status to `error`, append an `## Error` section with the error message, move to `prompt-queue/failed/`
+   d. **MANDATORY: Handle the subagent result** — these steps MUST execute before starting the next prompt:
+
+      **On success** (subagent returned without error):
+      1. Edit the prompt file: replace `Status: running` with `Status: complete`
+      2. Run: `mv prompt-queue/<filename> prompt-queue/complete/<filename>`
+      3. Confirm the mv succeeded before continuing
+
+      **On error / exception** (subagent threw or reported failure):
+      1. Edit the prompt file: replace `Status: running` with `Status: error`
+      2. Append to the prompt file:
+         ```
+         ## Error
+         <error details from subagent>
+         ```
+      3. Run: `mv prompt-queue/<filename> prompt-queue/failed/<filename>`
+      4. Confirm the mv succeeded before continuing
+
+      > ⚠️ Do NOT skip these steps. Do NOT proceed to the next prompt until the file has been edited AND moved.
 
    e. **Decrement remaining count** (if a limit was set), then repeat from step 3a.
 

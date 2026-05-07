@@ -29,16 +29,22 @@ Run the next waiting prompt from the queue and handle the result (success or err
    - Execute the prompt (run it as if the user had typed it)
    - Capture any output, errors, or results
 
-4. **On Success**:
-   - Update status to `Status: complete` in the file using the Edit tool
-   - Move the file using Bash: `mv prompt-queue/<filename> prompt-queue/complete/<filename>`
-   - Report success with the prompt and result
+4. **MANDATORY On Success** — these steps MUST execute before reporting done:
+   - Edit the file: replace `Status: running` with `Status: complete`
+   - Run: `mv prompt-queue/<filename> prompt-queue/complete/<filename>`
+   - Confirm mv succeeded, then report success
 
-5. **On Error**:
-   - Update status to `Status: error` in the file using the Edit tool
-   - Append an `## Error` section to the file with the error details using the Edit tool
-   - Move the file using Bash: `mv prompt-queue/<filename> prompt-queue/failed/<filename>`
-   - Report the error
+5. **MANDATORY On Error** — these steps MUST execute before reporting done:
+   - Edit the file: replace `Status: running` with `Status: error`
+   - Append to the file using the Edit tool:
+     ```
+     ## Error
+     <error details>
+     ```
+   - Run: `mv prompt-queue/<filename> prompt-queue/failed/<filename>`
+   - Confirm mv succeeded, then report the error
+
+> ⚠️ Do NOT skip steps 4 or 5. The file MUST be edited AND moved before this skill is considered complete.
 
 ## Example
 
